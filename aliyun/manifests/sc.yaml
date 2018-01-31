@@ -1,0 +1,21 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ssd
+parameters:
+  region: cn-hangzhou
+  type: cloud_ssd
+  zone: cn-hangzhou-f
+provisioner: aliyun/disk
+reclaimPolicy: Retain
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+parameters:
+  region: cn-hangzhou
+  type: cloud_efficiency
+  zone: cn-hangzhou-f
+provisioner: aliyun/disk
+reclaimPolicy: Retain
